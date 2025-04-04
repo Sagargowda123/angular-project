@@ -1,0 +1,19 @@
+<div class="loan-container">
+  <h2>Loan Calculator</h2>
+
+  <div class="slider-group">
+    <label>Loan Amount: <strong>{{ loanAmount | currency }}</strong></label>
+    <input type="range" min="1000" max="50000" [(ngModel)]="loanAmount" (input)="calculateLoan()" />
+  </div>
+
+  <div class="slider-group">
+    <label>Loan Period (Months): <strong>{{ loanPeriod }} Months</strong></label>
+    <input type="range" min="6" max="60" [(ngModel)]="loanPeriod" (input)="calculateLoan()" />
+  </div>
+
+  <div class="result">
+    <h3>Total Payable: <span>{{ totalPayable | currency }}</span></h3>
+  </div>
+
+  <button (click)="applyLoan()">Apply Loan</button>
+</div>
